@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-// ✅ FIXED: include /api in baseURL
+// ✅ Make sure /api is included
 const API = axios.create({
   baseURL: 'https://task-manager-backend-blue-nine.vercel.app/api',
 });
