@@ -24,17 +24,25 @@ export default function TaskList() {
     loadTasks();
   }, []);
 
+  if (tasks.length === 0) {
+    return <p className="no-tasks">No tasks yet — add one above! 😊</p>;
+  }
+
   return (
     <div>
-      <h3>My Tasks</h3>
       {tasks.map((t) => (
         <div key={t._id} className="task-item">
-          <strong>{t.title}</strong> — {t.status}
-          <p>{t.description}</p>
-          <button onClick={() => toggleStatus(t)}>
-            {t.status === 'Pending' ? 'Mark Done' : 'Mark Pending'}
-          </button>
-          <button onClick={() => deleteTask(t._id)}>Delete</button>
+          <div>
+            <strong>{t.title}</strong>
+            <span className={`status ${t.status}`}>{t.status}</span>
+            <p>{t.description}</p>
+          </div>
+          <div>
+            <button onClick={() => toggleStatus(t)}>
+              {t.status === 'Pending' ? 'Mark Done' : 'Mark Pending'}
+            </button>
+            <button onClick={() => deleteTask(t._id)}>Delete</button>
+          </div>
         </div>
       ))}
     </div>

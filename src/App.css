@@ -1,38 +1,131 @@
-.App {
+/* App.css */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8fafc;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
   text-align: center;
+  color: #2563eb;
+  margin-bottom: 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  width: 90%;
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Task Form */
+.task-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 0.75rem;
+}
+
+.task-form input,
+.task-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.task-form input:focus,
+.task-form textarea:focus {
+  border-color: #2563eb;
+}
+
+.task-form button {
+  background-color: #2563eb;
   color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.task-form button:hover {
+  background-color: #1d4ed8;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Task List */
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  background: #f9fafb;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+}
+
+.task-item strong {
+  color: #111827;
+}
+
+.task-item p {
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
+.task-item .status {
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+}
+
+.status.Pending {
+  background-color: #fde68a;
+  color: #92400e;
+}
+
+.status.Completed {
+  background-color: #bbf7d0;
+  color: #166534;
+}
+
+.task-item button {
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: white;
+  transition: 0.2s;
+}
+
+.task-item button:first-child {
+  background-color: #16a34a;
+}
+
+.task-item button:first-child:hover {
+  background-color: #15803d;
+}
+
+.task-item button:last-child {
+  background-color: #dc2626;
+}
+
+.task-item button:last-child:hover {
+  background-color: #b91c1c;
+}
+
+.no-tasks {
+  text-align: center;
+  color: #6b7280;
+  font-weight: 500;
 }

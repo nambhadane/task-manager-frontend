@@ -18,18 +18,17 @@ export default function TaskForm({ onTaskAdded }) {
   };
 
   return (
-    <div className="p-4 border rounded-lg">
-      <h3>Add New Task</h3>
+    <div className="task-form">
       <input
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Task Title"
-      /><br />
+      />
       <textarea
         value={description}
         onChange={(e) => setDescription(e.target.value)}
         placeholder="Description"
-      /><br />
+      />
       <button onClick={addTask}>Add Task</button>
     </div>
   );
