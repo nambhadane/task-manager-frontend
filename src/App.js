@@ -5,7 +5,7 @@ import TaskList from './components/TaskList';
 function App() {
   return (
     <div className="container">
-      <h1>🗂️ Task Manager</h1>
+     <h1>🗂️ Task Manager (Auto-Deploy Test)</h1>
       <TaskForm onTaskAdded={() => window.location.reload()} />
       <TaskList />
     </div>
